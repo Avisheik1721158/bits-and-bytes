@@ -1,0 +1,50 @@
+[
+    {
+        "_id": 1,
+        "name": "19V 2.37A 4.0*1.35mm Laptop Adapter Charger for asus charger replacement",
+        "description": "Made of fireproof Materials, with International and EU certification, with high temperature fire retardant ABS+PC plastic craft materials, with overload protection, ",
+        "minQuantity": 10,
+        "availableQuantity": 210,
+        "price": 120
+    },
+    {
+        "_id": 2,
+        "name": "18V 2.37A 4.0*1.35mm Laptop Adapter Charger for asus charger replacement",
+        "description": "Made of fireproof Materials, with International and EU certification, with high temperature fire retardant ABS+PC plastic craft materials, with overload protection, ",
+        "minQuantity": 11,
+        "availableQuantity": 449,
+        "price": 370
+    },
+    {
+        "_id": 3,
+        "name": "17V 2.37A 4.0*1.35mm Laptop Adapter Charger for asus charger replacement",
+        "description": "Made of fireproof Materials, with International and EU certification, with high temperature fire retardant ABS+PC plastic craft materials, with overload protection, ",
+        "minQuantity": 15,
+        "availableQuantity": 543,
+        "price": 450
+    },
+    {
+        "_id": 4,
+        "name": "16V 2.37A 4.0*1.35mm Laptop Adapter Charger for asus charger replacement",
+        "description": "Made of fireproof Materials, with International and EU certification, with high temperature fire retardant ABS+PC plastic craft materials, with overload protection, ",
+        "minQuantity": 17,
+        "availableQuantity": 435,
+        "price": 347
+    },
+    {
+        "_id": 5,
+        "name": "15V 2.37A 4.0*1.35mm Laptop Adapter Charger for asus charger replacement",
+        "description": "Made of fireproof Materials, with International and EU certification, with high temperature fire retardant ABS+PC plastic craft materials, with overload protection, ",
+        "minQuantity": 32,
+        "availableQuantity": 706,
+        "price": 367
+    },
+    {
+        "_id": 6,
+        "name": "14V 2.37A 4.0*1.35mm Laptop Adapter Charger for asus charger replacement",
+        "description": "Made of fireproof Materials, with International and EU certification, with high temperature fire retardant ABS+PC plastic craft materials, with overload protection, ",
+        "minQuantity": 13,
+        "availableQuantity": 556,
+        "price": 674
+    }
+]
