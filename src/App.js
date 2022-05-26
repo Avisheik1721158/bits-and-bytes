@@ -11,6 +11,7 @@ import BookingItem from './Pages/Home/BookingItem';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
 
             </RequireAuth>
           }>
-          <Route></Route>
+          <Route index element={<MyOrders></MyOrders>}></Route>
         </Route>
 
 
