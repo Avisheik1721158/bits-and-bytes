@@ -27,6 +27,29 @@ const BookingItem = () => {
         const quantityItem = event.target.quantity.value;
         const priceItem = item.price * quantityItem;
         console.log(name, email, quantityItem, priceItem);
+        const order = {
+            OrderId: item._id,
+            OrderName: item.name,
+            userName: name,
+            userEmail: email,
+            quantityItem: parseInt(quantityItem),
+            totalPrice: priceItem,
+            Phone: event.target.phone.value,
+            minQuantity: item.minQuantity,
+            availableQuantity: item.availableQuantity
+        }
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
 
         if (quantityItem < item.minQuantity || quantityItem > item.availableQuantity) {
             toast.error(`The number of Item Quantity should be between minimum Quantity : ${item.minQuantity} to available Quantity: ${item.availableQuantity}  `);
@@ -89,3 +112,7 @@ const BookingItem = () => {
 };
 
 export default BookingItem;
+
+
+
+
