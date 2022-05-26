@@ -10,6 +10,7 @@ import RequireAuth from './Pages/Shared/RequireAuth';
 import BookingItem from './Pages/Home/BookingItem';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -26,6 +27,14 @@ function App() {
             <RequireAuth>
               <BookingItem>
               </BookingItem>
+            </RequireAuth>
+          }>
+        </Route>
+        <Route path='/dashboard'
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+
             </RequireAuth>
           }>
         </Route>
