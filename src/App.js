@@ -37,6 +37,7 @@ function App() {
 
             </RequireAuth>
           }>
+          <Route></Route>
         </Route>
 
 
