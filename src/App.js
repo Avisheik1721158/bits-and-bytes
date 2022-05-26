@@ -4,7 +4,12 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Tools from './Pages/Home/Tools';
-import Footer from './Pages/Home/Footer';
+
+import SignUp from './Pages/Login/Signup';
+import RequireAuth from './Pages/Shared/RequireAuth';
+import BookingItem from './Pages/Home/BookingItem';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -13,10 +18,21 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tools" element={<Tools />} />
+
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path='/item/:itemId'
+          element={
+            <RequireAuth>
+              <BookingItem>
+              </BookingItem>
+            </RequireAuth>
+          }>
+        </Route>
+
 
       </Routes>
-      <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

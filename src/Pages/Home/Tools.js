@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import BookingItem from './BookingItem';
+// import BookingItem from './BookingItem';
 import Item from './Item';
 
 const Tools = () => {
     const [items, setItems] = useState([]);
-    const [purchaseItem, setPurchaseItem] = useState(null);
+    // const [purchaseItem, setPurchaseItem] = useState(null);
     useEffect(() => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
@@ -20,17 +20,17 @@ const Tools = () => {
                     items.map(item => <Item
                         key={item._id}
                         item={item}
-                        setPurchaseItem={setPurchaseItem}
+                    // setPurchaseItem={setPurchaseItem}
                     ></Item>)
                 }
             </div>
 
-            {
+            {/* {
                 purchaseItem && <BookingItem
                     purchaseItem={purchaseItem}
                     setPurchaseItem={setPurchaseItem}
                 ></BookingItem>
-            }
+            } */}
         </div>
     );
 };
