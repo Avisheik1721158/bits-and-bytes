@@ -1,18 +1,20 @@
 import React from 'react';
-import { toast } from 'react-toastify';
 
-const OrderRow = ({ order }) => {
+
+const OrderRow = ({ order, index, pay }) => {
     const { userName, OrderName, totalPrice } = order;
+    // const { transactionId } = pay;
 
 
     return (
 
 
         <tr>
-            <th>3</th>
+            <th>{index + 1}</th>
             <td>{userName}</td>
             <td>{OrderName}</td>
             <td>{totalPrice}</td>
+            {/* <td>{transactionId}</td> */}
 
 
         </tr>

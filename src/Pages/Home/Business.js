@@ -8,20 +8,20 @@ const Business = () => {
             <div className="footer footer-center p-10  text-base-content rounded">
                 <div className=" gap-4">
                     <div className="indicator">
-                        <span className="indicator-item badge badge-secondary">99+</span>
-                        <button className="btn">Countries</button>
+                        <span className="indicator-item badge badge-secondary">100+</span>
+                        <button className="btn">Customers</button>
                     </div>
                     <div className="indicator">
-                        <span className="indicator-item badge badge-primary">1019+</span>
-                        <button className="btn btn-accent">Products</button>
+                        <span className="indicator-item badge badge-primary">120M+</span>
+                        <button className="btn btn-accent">Annual revenue</button>
                     </div>
                     <div className="indicator">
-                        <span className="indicator-item badge badge-info">3410+</span>
-                        <button className="btn btn-success">Clients</button>
+                        <span className="indicator-item badge badge-info">32K+</span>
+                        <button className="btn btn-success">Reviews</button>
                     </div>
                     <div className="indicator">
-                        <span className="indicator-item badge badge-warning">670+</span>
-                        <button className="btn btn-error">Clients</button>
+                        <span className="indicator-item badge badge-warning">50+</span>
+                        <button className="btn btn-error">Tools</button>
                     </div>
                 </div>
                 {/* <div>

@@ -1,14 +1,16 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Payment from './Payment';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [item, setItem] = useState({});
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/order?userEmail=${user.email}`, {
@@ -44,6 +46,8 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Order name</th>
                             <th> Total Price</th>
+                            <th> Payment Status(Pay) </th>
+                            <th> Payment Status(Paid) </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,6 +58,12 @@ const MyOrders = () => {
                                     <td>{order.userName}</td>
                                     <td>{order.OrderName}</td>
                                     <td>{order.totalPrice}</td>
+                                    <td> {
+                                        !order.paid && <Link to={`/dashboard/payment/${order._id}`}> <button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    </td>
+                                    <td> {
+                                        order.paid && <Link to={``}> <span className='text-success font-bold'>Paid</span></Link>}
+                                    </td>
                                 </tr>)
                         }
 

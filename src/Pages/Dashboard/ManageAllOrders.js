@@ -1,14 +1,17 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 import Loading from '../Shared/Loading';
 import OrderRow from './OrderRow';
 
 
+
 const ManageAllOrders = () => {
-    const [user] = useAuthState(auth)
+
+    // const { transactionId } = pay;
     // const { data: users, isLoading } = useQuery('users', () =>
     //     fetch('http://localhost:5000/user')
     //         .then(res => res.json())
@@ -16,16 +19,18 @@ const ManageAllOrders = () => {
     // if (isLoading) {
     //     return <Loading></Loading>
     // }
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/order', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/all`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }).then(res => res.json()))
-    // .then(result => console.log(result))
+    })
+        .then(res => res.json()))
+
     if (isLoading) {
         return <Loading></Loading>
     }
+
     return (
         <div>
             <h2 className='text-2xl'>
@@ -33,7 +38,7 @@ const ManageAllOrders = () => {
             </h2>
 
             <div class="overflow-x-auto">
-                {/* <table class="table w-full">
+                <table class="table w-full">
 
                     <thead>
                         <tr>
@@ -42,22 +47,24 @@ const ManageAllOrders = () => {
                             <th>User Name</th>
                             <th>Order Product</th>
                             <th>Total Price</th>
-                            <th>Paid status</th>
+                            <th>Paid status </th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            orders.map(order => <OrderRow
+                            orders.map((order, index, pay) => <OrderRow
                                 key={order._id}
+                                index={index}
                                 order={order}
+                                // pay={pay}
                                 refetch={refetch}
                             ></OrderRow>)
                         }
 
 
                     </tbody>
-                </table> */}
+                </table>
             </div>
         </div>
     );

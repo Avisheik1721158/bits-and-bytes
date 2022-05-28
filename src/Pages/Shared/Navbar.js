@@ -13,8 +13,10 @@ const Navbar = () => {
     const menu = <>
         <li><Link to="/" >Home</Link></li>
         <li><Link to="/tools" >Tools and Parts</Link></li>
-        <li><Link to="/business" >Business Summary</Link></li>
-        <li><Link to="/reviews" >Reviews</Link></li>
+        <li><Link to="/blogs" >Blogs</Link></li>
+        {/* <li><Link to="/business" >Business Summary</Link></li>
+        <li><Link to="/reviews" >Reviews</Link></li> */}
+
         {
             user && <li><Link to="/dashboard" >Dashboard</Link></li>
         }
