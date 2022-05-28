@@ -17,6 +17,11 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+
+
 function App() {
   return (
     <div className="max-w-7xl mx-auto px-12">
@@ -46,6 +51,9 @@ function App() {
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+          <Route path='manage-all-orders' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
+          <Route path='add-a-product' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manage-products' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
         </Route>
 
 

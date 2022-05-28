@@ -26,7 +26,7 @@ const BookingItem = () => {
         const email = event.target.email.value;
         const quantityItem = event.target.quantity.value;
         const priceItem = item.price * quantityItem;
-        console.log(name, email, quantityItem, priceItem);
+
         const order = {
             OrderId: item._id,
             OrderName: item.name,
@@ -47,7 +47,7 @@ const BookingItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
             })
 
 

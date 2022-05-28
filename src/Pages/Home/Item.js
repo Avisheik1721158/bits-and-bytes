@@ -13,6 +13,7 @@ const Item = ({ item, setPurchaseItem }) => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-teal-400">{name}</h2>
                     {/* <p>{image}</p> */}
+                    <img className='w-64' src={image} alt="" />
                     <p><small>{description}</small></p>
                     <h2 className='text-sky-400'><small>Min_Quantity: {minQuantity} </small></h2>
                     <h2 className='text-sky-400'><small>Available_Quantity: {availableQuantity} </small></h2>

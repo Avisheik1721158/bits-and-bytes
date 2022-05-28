@@ -1,10 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import auth from '../../firebase.init';
 
 import Loading from '../Shared/Loading';
-import UserRow from './UserRow';
+import OrderRow from './OrderRow';
 
-const Users = () => {
+
+const ManageAllOrders = () => {
+    const [user] = useAuthState(auth)
     // const { data: users, isLoading } = useQuery('users', () =>
     //     fetch('http://localhost:5000/user')
     //         .then(res => res.json())
@@ -12,49 +16,51 @@ const Users = () => {
     // if (isLoading) {
     //     return <Loading></Loading>
     // }
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/order', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()))
+    // .then(result => console.log(result))
     if (isLoading) {
         return <Loading></Loading>
     }
     return (
         <div>
             <h2 className='text-2xl'>
-                All Users: {users.length}
+                All Orders: {orders.length}
             </h2>
 
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                {/* <table class="table w-full">
 
                     <thead>
                         <tr>
 
                             <th></th>
-                            <th>Name</th>
-                            <th>Status</th>
-                            <th>Delete</th>
+                            <th>User Name</th>
+                            <th>Order Product</th>
+                            <th>Total Price</th>
+                            <th>Paid status</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            users.map(user => <UserRow
-                                key={user._id}
-                                user={user}
+                            orders.map(order => <OrderRow
+                                key={order._id}
+                                order={order}
                                 refetch={refetch}
-                            ></UserRow>)
+                            ></OrderRow>)
                         }
 
 
                     </tbody>
-                </table>
+                </table> */}
             </div>
         </div>
     );
 };
 
-export default Users;
+export default ManageAllOrders;
