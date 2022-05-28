@@ -6,7 +6,7 @@ const Tools = () => {
     const [items, setItems] = useState([]);
     // const [purchaseItem, setPurchaseItem] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://desolate-garden-75654.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

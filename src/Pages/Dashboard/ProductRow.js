@@ -7,7 +7,7 @@ const ProductRow = ({ product, index }) => {
         const proceed = window.confirm('Are you want to sure this item??')
 
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`
+            const url = `https://desolate-garden-75654.herokuapp.com/item/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

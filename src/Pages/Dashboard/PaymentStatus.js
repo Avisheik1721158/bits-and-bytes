@@ -14,13 +14,13 @@ const PaymentStatus = () => {
 
 
     // const { data: users, isLoading } = useQuery('users', () =>
-    //     fetch('http://localhost:5000/user')
+    //     fetch('https://desolate-garden-75654.herokuapp.com/user')
     //         .then(res => res.json())
     // )
     // if (isLoading) {
     //     return <Loading></Loading>
     // }
-    const { data: payment, isLoading, refetch } = useQuery('payment', () => fetch(`http://localhost:5000/payment`, {
+    const { data: payment, isLoading, refetch } = useQuery('payment', () => fetch(`https://desolate-garden-75654.herokuapp.com/payment`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

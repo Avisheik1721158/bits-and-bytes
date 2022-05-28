@@ -13,13 +13,13 @@ const ManageAllOrders = () => {
 
     // const { transactionId } = pay;
     // const { data: users, isLoading } = useQuery('users', () =>
-    //     fetch('http://localhost:5000/user')
+    //     fetch('https://desolate-garden-75654.herokuapp.com/user')
     //         .then(res => res.json())
     // )
     // if (isLoading) {
     //     return <Loading></Loading>
     // }
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/all`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://desolate-garden-75654.herokuapp.com/all`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

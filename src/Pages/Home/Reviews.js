@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch(`http://localhost:5000/review`, {
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch(`https://desolate-garden-75654.herokuapp.com/review`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

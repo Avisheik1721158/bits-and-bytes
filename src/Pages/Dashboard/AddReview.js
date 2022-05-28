@@ -34,7 +34,7 @@ const AddReview = () => {
 
         }
         // send to db
-        fetch('http://localhost:5000/review', {
+        fetch('https://desolate-garden-75654.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

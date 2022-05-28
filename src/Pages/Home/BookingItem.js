@@ -13,7 +13,7 @@ const BookingItem = () => {
 
     const [user, loading, error] = useAuthState(auth);
     useEffect(() => {
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://desolate-garden-75654.herokuapp.com/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -38,7 +38,7 @@ const BookingItem = () => {
             minQuantity: item.minQuantity,
             availableQuantity: item.availableQuantity
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://desolate-garden-75654.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L34ZdFjTqOrjldUw78wLgtUdj0opRe43WuVj
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://desolate-garden-75654.herokuapp.com/order/${id}`;
     const { data, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

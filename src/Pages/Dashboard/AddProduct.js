@@ -47,7 +47,7 @@ const AddProduct = () => {
 
                     }
                     // send to db
-                    fetch('http://localhost:5000/item', {
+                    fetch('https://desolate-garden-75654.herokuapp.com/item', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
